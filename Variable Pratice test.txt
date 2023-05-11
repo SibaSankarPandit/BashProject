@@ -1,0 +1,10 @@
+--- # This is Variable Pratice test
+  - host: lab
+    user:
+    become: yes
+    connection: ssh
+    vars:
+      pkgname: httpd
+    tasks:
+      - name: httpd installation on All Slave nodes
+        action: yum name='{{pkgname}}' state=present
